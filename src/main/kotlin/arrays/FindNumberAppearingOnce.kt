@@ -2,7 +2,7 @@ package arrays
 
 
 fun main() {
-    val arr = arrayOf(1, 1,2, 2, 3, 4, 4, 5, 5, 8, 8, 7, 7)
+    val arr = arrayOf(1, 1, 2, 2, 3, 4, 4, 5, 5, 8, 8, 7, 7)
     arr.sort()
 
     val a = 14
@@ -32,13 +32,15 @@ fun findNumberBetter(arr: Array<Int>): Int {
     println(map)
 
     for (value in map) {
-       if(value.value == 1) return value.key
+        if (value.value == 1) return value.key
     }
     return -1
 }
 
 // optimal approach
-fun findOptimal(arr:Array<Int>):Int {
+// time complexity -> O(n)
+// space complexity -> O(1)
+fun findOptimal(arr: Array<Int>): Int {
     var value = 0
     for (num in arr) {
         value = value xor num
