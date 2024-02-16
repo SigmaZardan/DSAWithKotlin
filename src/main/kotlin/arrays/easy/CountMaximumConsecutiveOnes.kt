@@ -1,6 +1,4 @@
-package arrays
-
-import kotlin.math.max
+package arrays.easy
 
 
 fun main() {

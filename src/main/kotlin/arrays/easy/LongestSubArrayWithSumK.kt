@@ -1,9 +1,9 @@
-package arrays
+package arrays.easy
 
 
 fun main() {
-    val arr = arrayOf(1, 2, 3, 1, 1, 1)
-    println(optimalSolution(arr, 3))
+    val arr = arrayOf(1,2, 1, 0, 1)
+    println(optimalSolution(arr, 4))
 }
 
 // brute force solution
