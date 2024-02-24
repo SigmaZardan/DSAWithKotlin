@@ -1,11 +1,14 @@
 package arrays.medium
 
+import kotlin.math.floor
+
 
 fun main() {
     // sort numbers
     val arr = arrayOf(1, 2, 0, 0, 1, 2, 0)
     sortBrute(arr)
     println(arr.joinToString())
+
 }
 
 fun sortBrute(arr: Array<Int>) {
