@@ -4,7 +4,7 @@ package arrays.medium
 fun main() {
     // sort numbers
     val arr = arrayOf(1, 2, 0, 0, 1, 2, 0)
-    sortBrute(arr)
+    optimalSolutionUsingDutchFlagAlgorithm(arr)
     println(arr.joinToString())
 }
 
@@ -31,4 +31,35 @@ fun sortBrute(arr: Array<Int>) {
         arr[i++] = 2
     }
     println(arr.joinToString())
+}
+
+// optimal approach
+fun optimalSolutionUsingDutchFlagAlgorithm(arr: Array<Int>): Array<Int> {
+    var low = 0
+    var mid = 0
+    var high = arr.size - 1
+
+    while (mid <= high) {
+        when (arr[mid]) {
+            0 -> {
+                swap(arr, low, mid)
+                low++
+                mid++
+            }
+
+            2 -> {
+                swap(arr, mid, high)
+                high--
+            }
+
+            else -> mid++
+        }
+    }
+    return arr
+}
+
+fun swap(arr: Array<Int>, first: Int, second: Int) {
+    val temp = arr[first]
+    arr[first] = arr[second]
+    arr[second] = temp
 }
