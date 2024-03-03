@@ -1011,7 +1011,7 @@ fun main() {
     )
     val anotherOne = arrayOf(-2, 1, -3, 4, -1, 2, 1, -5, 4)
     val anotherExample = arrayOf(5, 4, -1, 7, 8)
-    println(optimalSolutionFindSubArrayWithMaxSum(anotherExample))
+    println(maxSumArray(anotherExample).joinToString())
 }
 
 
@@ -1082,4 +1082,30 @@ fun optimalSolutionFindSubArrayWithMaxSum(arr: Array<Int>): Int {
         }
     }
     return if (maxSum == 0) maxValue else maxSum
+}
+
+// return the sub-array with max sum
+fun maxSumArray(arr: Array<Int>): IntArray {
+    var currSum = 0
+    var maxSum = 0
+    var startIndex = -1
+    var endIndex = -1
+    for (i in arr.indices) {
+        if (currSum == 0) startIndex = i
+        currSum += arr[i]
+        if (currSum > maxSum) {
+            maxSum = currSum
+            endIndex = i
+        }
+        if (currSum < 0) currSum = 0
+    }
+
+    val ans = mutableListOf<Int>()
+
+    for (k in startIndex..endIndex) {
+        ans.add(arr[k])
+    }
+
+    return ans.toIntArray()
+
 }
