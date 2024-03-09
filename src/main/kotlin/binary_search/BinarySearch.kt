@@ -11,7 +11,7 @@ fun main() {
 }
 
 // iterative approach
-fun binarySearchIterativeSolution(arr: Array<Int>, target: Int): Int {
+fun binarySearchIterativeSolution(arr: IntArray, target: Int): Int {
     var low = 0
     var high = arr.size - 1
     while (low <= high) {
